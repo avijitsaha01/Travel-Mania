@@ -1,0 +1,23 @@
+body {
+    background-image: url('../../assets/images/bg.png');
+    background-repeat: repeat-y;
+    background-size: cover;
+    width: 100%;
+}
+
+html, body {
+    height: 100%;
+}
+
+.card-img-style {
+    padding: 20px;
+}
+
+.card-style{
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+.main{
+    margin: 0 auto;
+    padding: 70px 0;
+}

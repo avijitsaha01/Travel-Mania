@@ -1,13 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import Home from './component/Home/Home';
+import Header from './component/Header/Header';
 
 function App() {
   return (
     <div className="App">
-    <button className="btn btn-success">Hello</button>
-    <button className="btn btn-success">this is nine</button>
-    <button className="btn btn-danger">hjkdfg</button>
+      <Header></Header>
+      <Home></Home>
       
     </div>
   );
