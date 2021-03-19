@@ -1,0 +1,39 @@
+.wrap{
+    padding: 70px 0;
+    
+}
+.login{
+    width: 450px;
+    height: 300px;
+    background-color: #fff;
+    padding: 10px 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+.login p{
+    float: left;
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+.login input{
+    width: 100%;
+    border: none;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 1px solid crimson;
+    outline: none;
+    color: black;
+    margin-bottom: 15px;
+
+}
+.option{
+    display: flex;
+    justify-content: space-between;
+}
+
+body{
+    background-color: #fff;
+}

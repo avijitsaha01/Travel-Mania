@@ -1,44 +1,21 @@
 import React from 'react';
 import './Home.css'
-import image from '../../assets/images/Frame-1.png'
+import { useEffect, useState } from 'react';
+import Data from '../../assets/data.js'
+import Ticket from '../Ticket/Ticket';
 
 const Home = () => {
+    const [data, setData] = useState([]);
+    useEffect(() => {
+        setData(Data);
+        console.log(Data)
+    }, []);
     return (
-        <div className="container ">
+        <div className="container">
             <div className="row main">
-                <div className="col-md-3">
-                    <div className="card card-style">
-                        <img src={image} className="card-img-top card-img-style" alt="..." />
-                        <div className="card-body">
-                            <h5 className="card-title">Card title</h5>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-3">
-                    <div className="card card-style">
-                        <img src={image} className="card-img-top card-img-style" alt="..." />
-                        <div className="card-body">
-                            <h5 className="card-title">Card title</h5>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-3">
-                    <div className="card card-style">
-                        <img src={image} class="card-img-top card-img-style" alt="..." />
-                        <div className="card-body">
-                            <h5 className="card-title">Card title</h5>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-3">
-                    <div className="card card-style">
-                        <img src={image} class="card-img-top card-img-style" alt="..." />
-                        <div className="card-body">
-                            <h5 className="card-title">Card title</h5>
-                        </div>
-                    </div>
-                </div>
-
+                {
+                    data.map(dt => <Ticket data={dt}></Ticket>)
+                }
             </div>
 
         </div>
