@@ -10,15 +10,15 @@ const Login = () => {
                     <input type="password" placeholder="Password" />
                     <div className="option">
                         <div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" />
+                            <div class="form-check float-left">
+                                <input class="form-check-input" type="checkbox" value="" />
                                 <label class="form-check-label" for="defaultCheck1">
-                                    Default checkbox
+                                     Remember Me
                                 </label>
                             </div>
                         </div>
                         <div>
-
+                            <h5>Forgot Password</h5>
                         </div>
                     </div>
                 </form>
