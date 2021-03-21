@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './Login.css'
 import gLogo from '../../assets/images/google.png'
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from '../../firebase.config';
+import { UserContext } from '../../App';
+import { useHistory, useLocation } from 'react-router';
 
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
@@ -13,6 +15,10 @@ if (!firebase.apps.length) {
 
 
 const Login = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+   const history = useHistory();
+   const location = useLocation();
+   let { from } = location.state || { from: { pathname: "/" } };
     //login signup
     const [form, setForm] = useState(true)
 
@@ -43,6 +49,8 @@ const Login = () => {
                     email: email
                 }
                 setGoogleUser(sinedInUser);
+                setLoggedInUser(sinedInUser);
+                history.replace(from);
             })
 
     }

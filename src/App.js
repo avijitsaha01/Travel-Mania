@@ -13,29 +13,32 @@ import {
   useLocation
 } from "react-router-dom";
 import Destination from './component/Destination/Destination';
-import { createContext } from 'react';
+import { createContext, useState } from 'react';
+import PrivateRoute from './component/PrivateRoute/PrivateRoute';
 
-const userContext = createContext()
+export const UserContext = createContext()
 
 function App() {
-
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
     <div className="App">
-
-      <Router>
-        <Header></Header>
-        <Switch>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route path="/login">
-            <Login></Login>
-          </Route>
-          <Route path="/destination">
-            <Destination></Destination>
-          </Route>
-        </Switch>
-      </Router>
+    
+      <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+        <Router>
+          <Header></Header>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+            <PrivateRoute path="/destination">
+              <Destination></Destination>
+            </PrivateRoute>
+          </Switch>
+        </Router>
+      </UserContext.Provider>
     </div>
   );
 }
