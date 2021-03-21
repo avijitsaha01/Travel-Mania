@@ -22,12 +22,6 @@ const Login = () => {
         name: '',
         email: ''
     })
-    // manual user state
-    const [user, setUser] = useState({
-        isSinedIn: false,
-        name: '',
-        email: ''
-    })
 
     //handle Changing of Input
     const handleChange = (event) => {

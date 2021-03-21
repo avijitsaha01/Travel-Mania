@@ -1,0 +1,36 @@
+.destination{
+    background-color: #EFEFEF;
+    min-height: 500px;
+    border-radius: 10px;
+    padding: 10px;
+}
+.search{
+    background-color: rgb(212, 212, 212);
+    padding: 10px;
+    color: #fff;
+    border-radius: 10px;
+}
+.search p{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0;
+}
+.search select{
+    background-color: white;
+    font-weight: bold;
+    width: 75%;
+    border: 1px solid gray;
+}
+.search-btn{
+    background-color: #FF6E40;
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+    margin-top: 10px;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+}
