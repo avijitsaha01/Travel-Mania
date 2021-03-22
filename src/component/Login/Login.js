@@ -22,16 +22,36 @@ const Login = () => {
     //login signup
     const [form, setForm] = useState(true)
 
-    // Google User State
-    const [googleUser, setGoogleUser] = useState({
+    // User State
+    const [user, setUser] = useState({
         isSinedIn: false,
-        name: '',
-        email: ''
+        email: '',
+        password: '',
+        name: ''
     })
+
+
 
     //handle Changing of Input
     const handleChange = (event) => {
-        console.log(event.target.name, event.target.value)
+        let isFormValid = true;
+        if(event.target.name === 'email'){
+            isFormValid = /\S+@\S+\.\S+/.test(event.target.value)
+        }
+        if(event.target.name === 'password'){
+             isFormValid = event.target.value.length > 6;
+        }
+        if(isFormValid){
+            const newUserInfo = {...user}
+            newUserInfo[event.target.name] = event.target.value;
+            setUser(newUserInfo);
+        }
+    }
+
+    const handleSubmit = (e) => {
+        
+
+        e.preventDefault();
     }
 
 
@@ -48,7 +68,7 @@ const Login = () => {
                     name: displayName,
                     email: email
                 }
-                setGoogleUser(sinedInUser);
+                
                 setLoggedInUser(sinedInUser);
                 history.replace(from);
             })
@@ -60,7 +80,8 @@ const Login = () => {
             <div className="login">
                 <form>
                     {
-                        form ? <div>
+                        form ? 
+                    <div>
                         <p>Login</p>
                         <input onBlur={handleChange} name="email" type="email" placeholder="Email" required />
                         <input type="password" onBlur={handleChange} name="password" placeholder="Password" required />
@@ -83,23 +104,24 @@ const Login = () => {
 
                         </span>
                     </div>
-
                     :
                     <div>
                         <p>Sign Up</p>
+                        
                         <input onBlur={handleChange} name="name" type="text" placeholder="Your Full Name" required />
 
                         <input onBlur={handleChange} name="email" type="email" placeholder="Email" required />
 
                         <input type="password" onBlur={handleChange} name="password" placeholder="Password" required />
 
-                        <input className="loginBtn" type="submit" value="Sign Up" />
+                        <input className="loginBtn" type="submit" onClick={handleSubmit} value="Sign Up" />
                         <span className="crtMsz">Have an account?
                          
                         <a onClick={() => setForm(true)} href="#">LogIn</a>
 
                         </span>
                     </div>
+                    
                     }
                 </form>
             </div>
