@@ -10,6 +10,19 @@
     color: #fff;
     border-radius: 10px;
 }
+.search ul{
+    margin-left: -41px;
+}
+.search ul li{
+    font-size: 20px;
+    color: orangered;
+    font-weight: bold;
+    background-color: #fff;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 2px 2px;
+    list-style: none !important;
+}
 .search p{
     color: #fff;
     font-size: 20px;
@@ -33,4 +46,16 @@
     border: none;
     color: #fff;
     font-weight: bold;
+}
+.search-result{
+    padding: 10px 10px;
+    border-radius: 10px;
+    margin: 10px 10px;
+    background-color: orangered;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search-result img{
+    width: 100px;
 }

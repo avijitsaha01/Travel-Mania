@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Ticket = (props) => {
-    const { name, image, price } = props.data;
+    const { name, image, price, id } = props.data;
     return (
         <div className="col-md-3">
-            <Link to="/destination">
+            <Link to={`/destination/${id}`}>
                 <div className="card card-style">
                     <img src={image} className="card-img-top card-img-style" alt="..." />
                     <div className="card-body">

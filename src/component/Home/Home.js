@@ -8,7 +8,6 @@ const Home = () => {
     const [data, setData] = useState([]);
     useEffect(() => {
         setData(Data);
-        console.log(Data)
     }, []);
     return (
         <div className="container">
